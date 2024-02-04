@@ -155,7 +155,8 @@ class SampleApp(tk.Tk):
     def Unpause(self, event):
         global client
         print("Got Unpause")
-        client.pause(0)
+        if self.sp is not None:
+            client.pause(0)
 
     def Volup(self, event):
         global client
