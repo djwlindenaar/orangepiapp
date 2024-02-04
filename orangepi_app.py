@@ -595,7 +595,7 @@ class MenuPage(ttk.Frame):
             #self.controller.handler.push("Diagnostics: on\n".encode())
             Popen([sys.executable, '/usr/local/bin/enginelogbt.py'])
         elif item == "SpotifyL":
-            client.pause()
+            client.pause(1)
             self.stopspotify()
             # Set up the Spotify authentication
             try:
@@ -612,7 +612,7 @@ class MenuPage(ttk.Frame):
                 self.stopspotify()
             self.controller.show_frame(StartPage)
         elif item == "SpotifyD":
-            client.pause()
+            client.pause(1)
             self.stopspotify()
             # Set up the Spotify authentication
             try:
