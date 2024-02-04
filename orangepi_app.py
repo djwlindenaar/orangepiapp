@@ -150,13 +150,20 @@ class SampleApp(tk.Tk):
     def Pause(self, event):
         global client
         print("Got Pause")
-        client.pause(1)
+        if self.sp is None:
+            client.pause(1)
+        else:
+            self.sp.pause_playback()
 
     def Unpause(self, event):
         global client
         print("Got Unpause")
-        if self.sp is not None:
+        if self.sp is None:
             client.pause(0)
+        else:
+            if self.spdevice is None:
+                self.spdevice = [device['id'] for device in self.sp.devices()['devices'] if device['name']=='BMW'][0]
+            self.sp.transfer_playback(self.spdevice)
 
     def Volup(self, event):
         global client
