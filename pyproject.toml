@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "orangepi-app"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Lindenaar <daniel-git@lindenaar.eu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^10.2.0"
+python-mpd2 = "^3.1.1"
+basiciw = "^0.2.2"
+spotipy = "^2.23.0"
+tk = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
