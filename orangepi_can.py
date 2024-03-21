@@ -288,7 +288,7 @@ class Redirector:
                 minute=data[1], 
                 second=data[2])
             td = datetime.datetime.now() - date
-            if abs(td.days)>100:
+            if abs(td.total_seconds()) > 600:
                 os.system('date -s "%s"'%date.ctime())
         except:
             pass
